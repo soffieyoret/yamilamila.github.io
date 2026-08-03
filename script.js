@@ -59,13 +59,25 @@ if (slides.length > 1) {
   resetTimer();
 }
 
-// ==== CONTACT FORM (demo only — no backend connected) ====
+// ==== CONTACT FORM ====
 const form = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  formNote.textContent = 'Gracias, ' + (document.getElementById('nombre').value.split(' ')[0] || '') + '. Tu consulta quedó registrada — te vamos a responder a la brevedad.';
-  form.reset();
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+    .then(() => {
+      formNote.textContent = '¡Gracias! Tu consulta fue enviada, Yami te va a responder pronto.';
+      form.reset();
+    })
+    .catch(() => {
+      formNote.textContent = 'Hubo un error al enviar. Probá de nuevo o escribí por WhatsApp.';
+    });
 });
 
 // ==== FOOTER YEAR ====
