@@ -198,7 +198,9 @@
                     <a href="#servicios" class="hover:text-olive transition-colors">Servicios</a>
                     <a href="#portfolio" class="hover:text-olive transition-colors">Proyectos</a>
                     <a href="#testimonios" class="hover:text-olive transition-colors">Testimonios</a>
-                    <a href="#contacto" class="btn-primary">Contactame</a>
+                    <a href="#cotizador" class="hover:text-olive transition-colors">Cotizador</a>
+                    <a href="#faq" class="hover:text-olive transition-colors">Preguntas</a>
+                    <a href="#contacto" class="btn-primary">Agendar Cita</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -216,7 +218,9 @@
             <a href="#servicios" class="mobile-link block text-ink hover:text-olive py-2 border-b border-tan/10 text-xs uppercase tracking-widest font-semibold">Servicios</a>
             <a href="#portfolio" class="mobile-link block text-ink hover:text-olive py-2 border-b border-tan/10 text-xs uppercase tracking-widest font-semibold">Proyectos</a>
             <a href="#testimonios" class="mobile-link block text-ink hover:text-olive py-2 border-b border-tan/10 text-xs uppercase tracking-widest font-semibold">Testimonios</a>
-            <a href="#contacto" class="mobile-link block text-center btn-primary w-full mt-4">Contactame</a>
+            <a href="#cotizador" class="mobile-link block text-ink hover:text-olive py-2 border-b border-tan/10 text-xs uppercase tracking-widest font-semibold">Cotizador</a>
+            <a href="#faq" class="mobile-link block text-ink hover:text-olive py-2 border-b border-tan/10 text-xs uppercase tracking-widest font-semibold">Preguntas</a>
+            <a href="#contacto" class="mobile-link block text-center btn-primary w-full mt-4">Agendar Cita</a>
         </div>
     </nav>
 
@@ -236,7 +240,7 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-olive-deep leading-[1.15]">
-                        Espacios que mejoran la forma de vivir.
+                        Diseñando espacios que mejoran la forma de vivir.
                     </h1>
 
                     <p class="text-ink/80 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
@@ -592,6 +596,216 @@
             </div>
         </div>
     </section>
+
+    <section id="cotizador" class="py-24 bg-cream border-b border-tan/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="eyebrow block">[ Estimación Online ]</span>
+                    <h2 class="heading-h2">
+                        Calcula el estimado de tu proyecto
+                    </h2>
+                    <p class="text-ink/80 font-light text-sm leading-relaxed">
+                        Obtené un presupuesto preliminar al instante para diseño de interiores, planos técnicos ejecutorios o supervisión presencial de obra.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-olive mt-1 text-xs"></i>
+                            <span class="text-ink text-xs font-medium">Claridad en cada entrega y etapa del trabajo.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-olive mt-1 text-xs"></i>
+                            <span class="text-ink text-xs font-medium">Plano digital ejecutable + carpeta técnica.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-olive mt-1 text-xs"></i>
+                            <span class="text-ink text-xs font-medium">Matrícula profesional MMO registrada.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Calculator Widget -->
+                <div class="lg:col-span-7 bg-cream-soft p-8 rounded-[2px] border border-tan/30 shadow-md">
+                    <form id="calculator-form" oninput="calculateBudget()" class="space-y-6">
+                        
+                        <!-- Step 1: Project Type -->
+                        <div>
+                            <label class="eyebrow block mb-3">1. Tipo de Proyecto</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="projectType" value="18" checked class="peer hidden">
+                                    <div class="p-3 bg-cream border border-tan/30 rounded-[2px] text-center peer-checked:border-olive peer-checked:bg-olive peer-checked:text-white text-ink text-xs font-semibold transition-all">
+                                        Residencial
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="projectType" value="20" class="peer hidden">
+                                    <div class="p-3 bg-cream border border-tan/30 rounded-[2px] text-center peer-checked:border-olive peer-checked:bg-olive peer-checked:text-white text-ink text-xs font-semibold transition-all">
+                                        Interiorismo
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="projectType" value="24" class="peer hidden">
+                                    <div class="p-3 bg-cream border border-tan/30 rounded-[2px] text-center peer-checked:border-olive peer-checked:bg-olive peer-checked:text-white text-ink text-xs font-semibold transition-all">
+                                        Comercial
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Surface Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="eyebrow">2. Superficie Aproximada</label>
+                                <span class="text-olive-deep font-bold text-xl" id="area-val">100 m²</span>
+                            </div>
+                            <input type="range" id="area-range" min="20" max="500" value="100" step="10" 
+                                   class="w-full h-2 bg-cream rounded-lg appearance-none cursor-pointer accent-olive">
+                            <div class="flex justify-between text-[10px] text-ink/60 mt-1">
+                                <span>20 m²</span>
+                                <span>250 m²</span>
+                                <span>500+ m²</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Additional Services -->
+                        <div>
+                            <label class="eyebrow block mb-3">3. Servicios Incluidos</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 p-3 bg-cream rounded-[2px] border border-tan/30 cursor-pointer hover:border-tan">
+                                    <input type="checkbox" id="calc-renders" checked class="rounded-none text-olive focus:ring-0">
+                                    <span class="text-xs text-ink font-medium">Modelado 3D & Propuesta de Interiorismo (+ $400 USD)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-cream rounded-[2px] border border-tan/30 cursor-pointer hover:border-tan">
+                                    <input type="checkbox" id="calc-calculo" checked class="rounded-none text-olive focus:ring-0">
+                                    <span class="text-xs text-ink font-medium">Planos Ejecutivos & Confección Técnica (+ $550 USD)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-cream rounded-[2px] border border-tan/30 cursor-pointer hover:border-tan">
+                                    <input type="checkbox" id="calc-obra" class="rounded-none text-olive focus:ring-0">
+                                    <span class="text-xs text-ink font-medium">Dirección de Obra Presencial (MMO) (+ $750 USD)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Estimated Output -->
+                        <div class="p-6 bg-cream border border-tan/40 rounded-[2px] flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div>
+                                <span class="eyebrow block text-[0.6rem]">Honorarios Estimados</span>
+                                <span class="text-3xl font-bold text-olive-deep" id="total-price">$2,750 USD</span>
+                                <span class="block text-[10px] text-ink/60 mt-0.5">*Sujeto a verificación final de requerimientos.</span>
+                            </div>
+                            <button type="button" onclick="sendQuoteToContact()" class="btn-primary w-full sm:w-auto">
+                                Solicitar Propuesta
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-24 bg-cream-soft border-b border-tan/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="eyebrow block mb-2">[ Dudas Comunes ]</span>
+                <h2 class="heading-h2">
+                    Preguntas frecuentes
+                </h2>
+                <p class="mt-4 text-ink/80 text-sm font-light leading-relaxed">
+                    Respuestas a las consultas más habituales antes de iniciar un proyecto juntos.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- Pregunta 1 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Qué servicios ofrecés?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        Realizo proyectos de arquitectura, diseño de interiores, remodelaciones, dirección y ejecución de obra, planos municipales, mensuras, subdivisiones, habilitaciones comerciales y asesoramiento técnico integral.
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Cuánto cuesta un proyecto?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        Los honorarios dependen del tipo y la complejidad del trabajo. Como referencia, el valor base para un anteproyecto de una vivienda de planta baja comienza desde USD 200.
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Trabajás únicamente en tu ciudad?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        No. Puedo desarrollar proyectos presenciales y también trabajar a distancia, adaptándome a la ubicación y las necesidades de cada cliente.
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Realizás solo el diseño o también la obra?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        Ambas opciones. Podés contratar únicamente el proyecto o también la dirección y ejecución de la obra.
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Cuánto demora un proyecto?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        Cada trabajo tiene tiempos diferentes según su escala y complejidad. Antes de comenzar se entrega un cronograma estimado.
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="bg-cream border border-tan/30 rounded-[2px] overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold text-olive-deep text-base sm:text-lg">¿Se puede remodelar una vivienda sin hacerla completamente nueva?</span>
+                        <div class="w-8 h-8 rounded-[2px] bg-cream-soft border border-tan/30 flex items-center justify-center text-olive transition-transform duration-300 icon-box">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-ink/80 text-sm font-light leading-relaxed border-t border-tan/10 pt-4">
+                        Sí. Muchas veces una buena redistribución de los espacios permite mejorar significativamente la funcionalidad y el confort sin necesidad de una construcción desde cero.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="py-24 bg-cream-soft">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -741,6 +955,19 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // FAQ Toggle Function
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.icon-box i');
+            
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fa-solid fa-chevron-up text-xs';
+            }
+        }
 
         // Filterable Portfolio Gallery
         function filterPortfolio(category) {
