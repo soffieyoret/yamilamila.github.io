@@ -1,0 +1,129 @@
+:root {
+    --bg-marfil: #F7F6F2;
+    --text-carbon: #1A1A1A;
+    --card-piedra: #4D4B4A;
+    --accent-roble: #C69D72;
+    --green-oliva: #556B2F;
+    --green-oliva-light: #6B8E23;
+    --green-oliva-dark: #3B4A20;
+    --radius: 2px;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-marfil);
+    color: var(--text-carbon);
+    font-family: 'Hepta Slab', serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hepta Slab', serif;
+    font-weight: 600;
+    color: var(--text-carbon);
+}
+
+/* Eyebrow Labels with Oak Wood Accent */
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--accent-roble);
+    font-weight: 600;
+}
+
+/* Headings scalable clamp */
+.heading-h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    color: var(--text-carbon);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Buttons: Organic Olive Green Accents */
+.btn-primary {
+    background-color: var(--green-oliva);
+    color: #FFFFFF;
+    border: 1px solid var(--green-oliva);
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    transition: all 0.3s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(85, 107, 47, 0.25);
+}
+.btn-primary:hover {
+    background-color: var(--green-oliva-dark);
+    border-color: var(--green-oliva-dark);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(85, 107, 47, 0.35);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--text-carbon);
+    border: 1px solid var(--green-oliva);
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    transition: all 0.3s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-ghost:hover {
+    background-color: rgba(85, 107, 47, 0.12);
+    border-color: var(--green-oliva);
+    color: var(--text-carbon);
+    transform: translateY(-2px);
+}
+
+/* Architectural Blueprint Grid Pattern */
+.blueprint-grid {
+    background-size: 28px 28px;
+    background-image: 
+        linear-gradient(to right, rgba(198, 157, 114, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(198, 157, 114, 0.12) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-marfil);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--green-oliva);
+    border-radius: 2px;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
